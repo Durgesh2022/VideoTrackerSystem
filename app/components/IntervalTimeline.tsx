@@ -1,5 +1,5 @@
 import { BarChart } from 'lucide-react'
-import type { Interval } from "../types/page"
+import type { Interval } from "../types/interval"
 
 
 export default function IntervalTimeline({ intervals, duration, currentTime }: {
