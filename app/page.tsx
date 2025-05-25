@@ -2,9 +2,6 @@
 import { useRouter } from 'next/navigation'
 import VideoProgressTracker from './components/VideoProgressTracker'
 import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
   SignedIn,
   SignedOut,
   UserButton,

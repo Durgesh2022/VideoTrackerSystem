@@ -2,9 +2,7 @@
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from "react"
 import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
+
   SignedIn,
   SignedOut,
   UserButton,

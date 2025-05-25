@@ -1,5 +1,5 @@
 "use client"
-import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback } from "react"
 import { useUser } from "@clerk/nextjs"
 
 type Interval = {
@@ -25,7 +25,6 @@ export default function useVideoProgress() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [mergedMap, setMergedMap] = useState<MergedSegmentMap[]>([])
 
   const mergeIntervals = useCallback((intervals: Interval[]): { merged: Interval[], mergedMap: MergedSegmentMap[] } => {
     if (intervals.length <= 1) return {
@@ -70,7 +69,6 @@ export default function useVideoProgress() {
         const newIntervals = [...prev, { start, end, segment: prev.length + 1 }]
         const { merged, mergedMap } = mergeIntervals(newIntervals)
         localStorage.setItem("watchedSegments", JSON.stringify(merged))
-        setMergedMap(mergedMap)
 
         fetch("/api/save-progress", {
           method: "POST",
