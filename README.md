@@ -115,14 +115,14 @@ A full-stack video progress tracking app using **Next.js (App Router)**, **Mongo
 │   ├── VideoProgressTracker.tsx    # Main video logic wrapper
 │   └── useVideoProgress.ts         # Custom hook for tracking logic
 ├── app/
-│   ├── api/
-│   │   ├── getProgress/page.ts     # Fetch saved segments
+│   └── api/
+│       ├── getProgress/page.ts     # Fetch saved segments
 │       └── setProgress/page.ts     # Save new segments
 ├── admin/page.tsx              # Admin dashboard for all segments
 ├── sign-in/page.tsx            # Clerk Sign In
 ├── sign-out/page.tsx           # Clerk Sign Out
 ├── types/
-│   └── video.ts                    # Type definitions
+    └── video.ts                    # Type definitions
 
 
 ---
