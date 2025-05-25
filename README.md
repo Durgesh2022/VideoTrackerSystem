@@ -93,10 +93,10 @@ A full-stack video progress tracking app using **Next.js (App Router)**, **Mongo
 ├── app/
 │   ├── api/
 │   │   ├── getProgress/page.ts     # Fetch saved segments
-│   │   └── setProgress/page.ts     # Save new segments
-│   ├── admin/page.tsx              # Admin dashboard for all segments
-│   ├── sign-in/page.tsx            # Clerk Sign In
-│   └── sign-out/page.tsx           # Clerk Sign Out
+│       └── setProgress/page.ts     # Save new segments
+├── admin/page.tsx              # Admin dashboard for all segments
+├── sign-in/page.tsx            # Clerk Sign In
+├── sign-out/page.tsx           # Clerk Sign Out
 ├── types/
 │   └── video.ts                    # Type definitions
 
