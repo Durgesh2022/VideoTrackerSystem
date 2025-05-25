@@ -1,4 +1,5 @@
 import { Play, Pause} from 'lucide-react'
+import { RefObject } from 'react'
 
 
 export default function VideoPlayer({ 
@@ -12,6 +13,7 @@ export default function VideoPlayer({
   isPlaying,
   videoRef 
 }: {
+  
   onPlay: () => void
   onPause: () => void
   onSeeked: () => void
@@ -20,7 +22,7 @@ export default function VideoPlayer({
   currentTime: number
   duration: number
   isPlaying: boolean
-  videoRef: React.RefObject<HTMLVideoElement>
+   videoRef: RefObject<HTMLVideoElement | null>
 }) {
   const formatTime = (seconds: number): string => {
     if (isNaN(seconds) || seconds === 0) return '00:00'
