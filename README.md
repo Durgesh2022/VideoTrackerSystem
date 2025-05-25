@@ -53,11 +53,38 @@ A full-stack video progress tracking app using **Next.js (App Router)**, **Mongo
   - Retrieves saved segments for a user/video
 
 - Segment Format:
-  {
-    userId: string,
-    videoId: string,
-    segments: [{ start: number, end: number }]
+ {
+  "userId": "user_12345",
+  "videoId": "video_abc",
+  "intervals": [
+    {
+      "start": 0,
+      "end": 30,
+      "segment": 1
+    },
+    {
+      "start": 90,
+      "end": 120,
+      "segment": 2
+    }
+  ],
+  "mergedMap": [
+    {
+      "fromSegments": [1],
+      "mergedInto": 1
+    },
+    {
+      "fromSegments": [2],
+      "mergedInto": 2
+    }
+  ],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1748112780490"
+    }
   }
+}
+
 
 - Segment Merging:
   - Combines overlapping or continuous intervals
