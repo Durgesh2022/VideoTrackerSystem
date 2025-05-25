@@ -75,6 +75,10 @@ A full-stack video progress tracking app using **Next.js (App Router)**, **Mongo
     { "start": 0, "end": 30 },
     { "start": 90, "end": 120 }
   ]
+  "MergeSegments": [
+    { "start": 0, "end": 30 },
+    { "start": 90, "end": 120 }
+  ]
 }
 
 
