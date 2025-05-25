@@ -3,11 +3,16 @@ import { MongoClient } from "mongodb"
 
 const uri = process.env.MONGODB_URI as string
 const client = new MongoClient(uri)
+let cachedClient: MongoClient | null = null
 
 export async function GET() {
   try {
-    if (!client.isConnected?.()) await client.connect()
-    const db = client.db("video_tracking_db")
+    if (!cachedClient) {
+      await client.connect()
+      cachedClient = client
+    }
+
+    const db = cachedClient.db("video_tracking_db")
     const collection = db.collection("progress")
 
     const allProgress = await collection.find({}).toArray()

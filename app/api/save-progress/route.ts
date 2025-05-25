@@ -3,6 +3,7 @@ import { MongoClient } from "mongodb"
 
 const uri = process.env.MONGODB_URI as string
 const client = new MongoClient(uri)
+let cachedClient: MongoClient | null = null
 
 export async function POST(request: Request) {
   try {
@@ -12,15 +13,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: "Invalid data" }, { status: 400 })
     }
 
-    if (!client.isConnected?.()) await client.connect()
-    const db = client.db("video_tracking_db")
+    if (!cachedClient) {
+      await client.connect()
+      cachedClient = client
+    }
+
+    const db = cachedClient.db("video_tracking_db")
     const collection = db.collection("progress")
 
     await collection.updateOne(
-      { videoId },
+      { videoId, userId },
       {
         $set: {
-          userId,
           intervals,
           mergedMap,
           updatedAt: new Date()
