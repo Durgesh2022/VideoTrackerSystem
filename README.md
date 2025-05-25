@@ -161,14 +161,6 @@ npm run dev
 
 ---
 
-📸 Screenshots (Coming Soon)
-
-- Video player with tracking overlay
-- Timeline showing segments
-- Admin panel listing all user segments
-
-
----
 
 🙌 Acknowledgements
 
@@ -184,4 +176,3 @@ npm run dev
 
 Built with ❤️ by Durgesh Tiwari
 
-Let me know if you’d like me to export this as an actual `README.md` file or include screenshots/assets as well!
